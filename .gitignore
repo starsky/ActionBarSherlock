@@ -4,10 +4,10 @@ gen
 lint.xml
 
 #Eclipse
-.project
-.classpath
-.settings
-.checkstyle
+#.project
+#.classpath
+#.settings
+#.checkstyle
 
 #IntelliJ IDEA
 .idea
@@ -25,11 +25,11 @@ pom.xml.*
 website/_site
 
 #Ant
-build.xml
-ant.properties
-local.properties
-proguard.cfg
-proguard-project.txt
+#build.xml
+#ant.properties
+#local.properties
+#proguard.cfg
+#proguard-project.txt
 
 #Other
 .DS_Store
