@@ -27,7 +27,7 @@ website/_site
 #Ant
 #build.xml
 #ant.properties
-#local.properties
+local.properties
 #proguard.cfg
 #proguard-project.txt
 
