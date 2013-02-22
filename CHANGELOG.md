@@ -1,6 +1,47 @@
 Change Log
 ===============================================================================
 
+Version 4.2.0 *(2012-10-07)*
+----------------------------
+
+**Maven `artifactId` is now to 'actionbarsherlock'.**
+
+Note: The `.Dialog` themes are now deprecated. These will be removed in a future
+version of the library.
+
+ * Add `SearchView` widget for standard search interaction (API 8+ only)
+ * Fix: `ShareActionProvider` in the split action bar no longer fills the entire
+   screen.
+ * Fix: `ShareActionProvider` now does file I/O on a background thread.
+ * Fix: Automatically correct `ColorDrawable` not respecting bounds when used as
+   a stacked background.
+ * Fix: Ensure fragments collection is present before dispatching events.
+ * Fix: XML-defined `onClick` searches the correct context for the declared
+   method.
+ * Fix: Ensure action mode start/finish callbacks are invoked on the activity
+   for the native action bar.
+ * Fix: Allow tab callbacks to have a fragment transaction instance for any
+   `FragmentActivity`.
+ * Fix: Ensure `CollapsibleActionView` callbacks are dispatched in both native
+   and compatbility action bars.
+ * Fix: Remove `.ForceOverflow` themes. These never should have been included.
+
+
+Version 4.1.0 *(2012-05-17)*
+----------------------------
+
+ * Fix: Altered technique used for menu event dispatching through the fragment
+   manager for greater control.
+ * Fix: Do not dispatch menu creation event if the activity has been destroyed.
+ * Fix: Correct potential `NullPointerException` when expanding an action item.
+ * Fix: Correct potential `NullPointerException` when the hardware menu key was
+   pressed in an activity that is forcing the overflow menu.
+ * Fix: Do not set a listener on the native action bar tab wrapper unless a
+   compatibility listener has been set.
+ * Fix: Ensure the compatibility animation framework is always available on
+   views even if they were previously detached from the view hierarchy.
+
+
 Version 4.0.2 *(2012-04-15)*
 ----------------------------
 
@@ -64,12 +105,12 @@ Version 3.5.0 *(2011-12-18)*
  *  Library now uses the `r6` version of the compatibility library for its base.
     Ice Cream Sandwich-specific implementations are currently disabled, however,
     but will be added in a future version of the library.
-    
+
     `MenuCompat`, `MenuItemCompat`, and `ActivityCompat` have be added back in
     to ease transition to this library but all their methods and the classes
     themselves have been deprecated.
  *  Rewritten menu and action item support from Ice Cream Sandwich.
-    
+
     * Removed the need for the custom `Window.FEATURE_ACTION_ITEM_TEXT` flag.
       You should now use the `showAsAction` attribute and/or the
       `setShowAsAction(int)` method on each `MenuItem` to control whether or
@@ -160,7 +201,7 @@ Version 3.3.0 *(2011-10-11)*
    [StackOverflow](http://stackoverflow.com/questions/5637894/dialogfragments-with-devices-api-level-11/7560686#7560686)
    for more information.
  * Fix: Popping a fragment off of the back stack now properly assigns its parent
-   activity. 
+   activity.
  * Fix: An activity result no longer causes a `NullPointerException` when the
    target fragment no longer exists.
  * Fix: Action item dividers are now properly initially hidden when their

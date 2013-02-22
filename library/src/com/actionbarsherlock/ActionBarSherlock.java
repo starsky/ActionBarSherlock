@@ -523,6 +523,23 @@ public abstract class ActionBarSherlock {
      */
     public void dispatchPanelClosed(int featureId, android.view.Menu menu) {}
 
+    /**
+     * Notify the action bar that the activity has been destroyed. This method
+     * should be called before the superclass implementation.
+     *
+     * <blockquote><p>
+     * @Override
+     * public void onDestroy() {
+     *     mSherlock.dispatchDestroy();
+     *     super.onDestroy();
+     * }
+     * </p></blockquote>
+     */
+    public void dispatchDestroy() {}
+
+    public void dispatchSaveInstanceState(Bundle outState) {}
+
+    public void dispatchRestoreInstanceState(Bundle savedInstanceState) {}
 
     ///////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////
@@ -755,7 +772,7 @@ public abstract class ActionBarSherlock {
         // Make sure that action views can get an appropriate theme.
         if (mMenuInflater == null) {
             if (getActionBar() != null) {
-                mMenuInflater = new MenuInflater(getThemedContext());
+                mMenuInflater = new MenuInflater(getThemedContext(), mActivity);
             } else {
                 mMenuInflater = new MenuInflater(mActivity);
             }
